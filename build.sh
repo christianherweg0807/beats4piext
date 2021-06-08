@@ -6,8 +6,8 @@ go get github.com/magefile/mage
 BRANCH=$(echo $BEATS_VERSION | awk -F \. {'print $1 "." $2'})
 echo Target branch: $BRANCH
 
-if [ ! -d "$GOPATH/src/github.com/elastic/beats" ]; then go get -v github.com/elastic/beats; fi
-
+if [ ! -d "$GOPATH/src/github.com/christianherweg0807/beats" ]; then go get -v github.com/christianherweg0807/beats; fi
+ln -s $GOPATH/src/github.com/christianherweg0807 $GOPATH/src/github.com/elastic
 cd $GOPATH/src/github.com/elastic/beats
 git checkout $BRANCH
 
